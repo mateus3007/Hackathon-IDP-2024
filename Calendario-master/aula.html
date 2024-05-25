@@ -139,11 +139,18 @@
             color: white;
             cursor: pointer;
         }
+
+        #logo {
+    margin-right: 30px; /* Espaço entre a imagem e o título */
+    width: 150px; /* Largura reduzida da imagem */
+    height: auto; /* Altura automática, para manter a proporção da imagem */
+}
     </style>
 </head>
 <body>
     <header>
-        <h1>Aula de Física</h1>
+        
+        <h1><img src="LOGO.jpeg" alt="Logo" id="logo">Aula de Matematica</h1>
     </header>
     
     <main>
@@ -217,9 +224,12 @@
             }
 
             function handleMessage() {
+                setTimeout(() => {
                 const message = messageInput.value.trim();
                 if (message) {
                     appendMessage(message, 'user');
+
+                    
                     const response = getBotResponse(message);
                     appendMessage(response, 'bot');
                     messageInput.value = '';
@@ -237,7 +247,7 @@
                         `;
                         document.getElementById('quizForm').insertAdjacentHTML('beforeend', questionHTML);
                     }
-                }
+                } },2000)
             }
 
             sendButton.addEventListener('click', handleMessage);
